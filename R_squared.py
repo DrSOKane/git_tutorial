@@ -3,6 +3,13 @@ import pandas as pd
 from functions import linear, quadratic, exponential, Gaussian
 
 def R_squared(fname, function, param1, param2, param3):
+    # Outputs R^2 value of an analytic function relative to a dataset
+    # fname: name of .csv file where x and y values are stored
+    # function: choose between "linear", "quadratic", "exponential" and "Gaussian"
+    # param1: gradient if linear, a if quradatic, amplitude if exponential or Gaussian
+    # param2: y intercept if linear, b if quadratic, decay constant if exponential, mean if Gaussian
+    # param3: c if quadratic, standard deviation if Gaussian
+
     # Read input data from "fname.csv"
     data = pd.read_csv(fname+".csv", header=None).to_numpy()
     x_values = data[:,0]
