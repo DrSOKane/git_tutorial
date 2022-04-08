@@ -23,6 +23,12 @@ def R_squared(fname, function, param1, param2, param3):
         y_fitted = exponential(x=x_values, A=param1, k=param2, c=param3)
     elif function == "Gaussian":
         y_fitted = Gaussian(x=x_values, A=param1, mu=param2, sigma=param3)
+    elif function == "sinh":
+        y_fitted = sinh(x=x_values, A=param1, k=param2, c=param3)
+    elif function == "cosh":
+        y_fitted = cosh(x=x_values, A=param1, k=param2, c=param3)
+    elif function == "tanh":
+        y_fitted = tanh(x=x_values, A=param1, k=param2, c=param3)
     else:
         print("The function you selected has not been implemented yet!")
     
@@ -48,3 +54,12 @@ def exponential(x, A, k, c=0):
 def Gaussian(x, A, mu, sigma, c=0):
     # mu = mean; sigma = standard deviation
     return A * np.exp(-((x - mu) / sigma) ** 2) + c
+
+def sinh(x, A, k, c=0):
+    return A * np.sinh(k * x) + c
+
+def cosh(x, A, k, c=0):
+    return A * np.cosh(k * x) + c
+
+def tanh(x, A, k, c=0):
+    return A * np.tanh(k * x) + c
