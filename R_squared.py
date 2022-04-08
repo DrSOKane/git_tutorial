@@ -3,10 +3,12 @@ import pandas as pd
 from functions import linear, quadratic, exponential, Gaussian
 
 def R_squared(fname, function, param1, param2, param3=0):
-    data = pd.read_csv(fname, header=None).to_numpy()
+    # Read input data from "fname.csv"
+    data = pd.read_csv(fname+".csv", header=None).to_numpy()
     x_values = data[:,0]
     y_values = data[:,1]
 
+    # Obtain fitted values from the chosen function
     if function == "linear":
         y_fitted = linear(x=x_values, m=param1, c=param2)
     elif function == "quadratic":
@@ -18,6 +20,7 @@ def R_squared(fname, function, param1, param2, param3=0):
     else:
         print("The function you selected has not been implemented yet!")
     
+    # Calculate R squared value of fit to data
     RSS = 0
     TSS = 0
     mean = np.mean(y_values)

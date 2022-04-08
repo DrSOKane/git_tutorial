@@ -10,4 +10,5 @@ def exponential(x, A, k, c=0):
     return A * np.exp(k * x) + c
 
 def Gaussian(x, A, mu, sigma, c=0):
+    # mu = mean; sigma = standard deviation
     return A * np.exp(-((x - mu) / sigma) ** 2) + c
