@@ -12,3 +12,12 @@ def exponential(x, A, k, c=0):
 def Gaussian(x, A, mu, sigma, c=0):
     # mu = mean; sigma = standard deviation
     return A * np.exp(-((x - mu) / sigma) ** 2) + c
+
+def sinh(x, A, k, c=0):
+    return A * np.sinh(k * x) + c
+
+def cosh(x, A, k, c=0):
+    return A * np.cosh(k * x) + c
+
+def tanh(x, A, k, c=0):
+    return A * np.tanh(k * x) + c

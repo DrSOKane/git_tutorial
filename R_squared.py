@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from functions import linear, quadratic, exponential, Gaussian
+from functions import linear, quadratic, exponential, Gaussian, sinh, cosh, tanh
 
 def R_squared(fname, function, param1, param2, param3):
     # Outputs R^2 value of an analytic function relative to a dataset
@@ -24,6 +24,12 @@ def R_squared(fname, function, param1, param2, param3):
         y_fitted = exponential(x=x_values, A=param1, k=param2, c=param3)
     elif function == "Gaussian":
         y_fitted = Gaussian(x=x_values, A=param1, mu=param2, sigma=param3)
+    elif function == "sinh":
+        y_fitted = sinh(x=x_values, A=param1, k=param2, c=param3)
+    elif function == "cosh":
+        y_fitted = cosh(x=x_values, A=param1, k=param2, c=param3)
+    elif function == "tanh":
+        y_fitted = tanh(x=x_values, A=param1, k=param2, c=param3)
     else:
         print("The function you selected has not been implemented yet!")
     
